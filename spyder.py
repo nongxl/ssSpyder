@@ -37,9 +37,6 @@ encodway = [
     'xchacha20-ietf-poly1305',
             ]
 
-encodway2 = [
-    'chacha20-ietf-poly1305'
-]
 
 #通过正则匹配shadowsocks链接
 def get_ssAddr(html):
@@ -59,7 +56,7 @@ def get_detailAddr(html):
         return 'null'
 
 table = PrettyTable(['title','abstract','link','content'])
-for x in encodway2:
+for x in encodway:
     # 将str转换成byte才能进行base64编码，然后再转换回str才能进行字符串处理
     query = str(base64.b64encode(x.encode(encoding='utf-8')),encoding='utf8').strip('=')
     for k in range(0,PAGE_NUM):
